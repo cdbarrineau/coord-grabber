@@ -1,0 +1,115 @@
+{
+  "_args": [
+    [
+      "@nasaworldwind/worldwind@0.9.0-lt2-v9",
+      "C:\\SVN\\FB-2DMapJMRC_ALL\\ng6_ui\\CTIA\\ui\\ng6"
+    ]
+  ],
+  "_from": "@nasaworldwind/worldwind@0.9.0-lt2-v9",
+  "_id": "@nasaworldwind/worldwind@0.9.0-lt2-v9",
+  "_inBundle": false,
+  "_integrity": "sha1-23ezkNx6cRb9btzLWtyxvT3hfSw=",
+  "_location": "/@nasaworldwind/worldwind",
+  "_npmUser": {
+    "name": "lt2"
+  },
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@nasaworldwind/worldwind@0.9.0-lt2-v9",
+    "name": "@nasaworldwind/worldwind",
+    "escapedName": "@nasaworldwind%2fworldwind",
+    "scope": "@nasaworldwind",
+    "rawSpec": "0.9.0-lt2-v9",
+    "saveSpec": null,
+    "fetchSpec": "0.9.0-lt2-v9"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://ide-vsops-nexus.ideorlando.org:8443/repository/lt2-npm/@nasaworldwind/worldwind/-/worldwind-0.9.0-lt2-v9.tgz",
+  "_shasum": "db77b390dc7a7116fd6edccb5adcb1bd3de17d2c",
+  "_spec": "@nasaworldwind/worldwind@0.9.0-lt2-v9",
+  "_where": "C:\\git\\ui\\ctia\\ui\\ng6",
+  "author": {
+    "name": "CPM"
+  },
+  "bugs": {
+    "url": "https://github.com/NASAWorldWind/WebWorldWind/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "NASA Project Manager",
+      "email": "patrick.hogan@nasa.gov"
+    },
+    {
+      "name": "ESA Consortium Contact",
+      "email": "yann.voumard@solenix.ch"
+    }
+  ],
+  "deprecated": false,
+  "description": "Web WorldWind",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-compress": "^1.4.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-jsdoc": "^2.2.0",
+    "grunt-karma": "^2.0.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-htmlfile-reporter": "^0.3.4",
+    "karma-jasmine": "^1.1.0",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-requirejs": "^1.1.0",
+    "recursive-readdir": "^2.2.1"
+  },
+  "files": [
+    "build/dist/images/",
+    "build/dist/worldwind.js",
+    "build/dist/worldwind.min.js"
+  ],
+  "homepage": "https://worldwind.arc.nasa.gov",
+  "keywords": [
+    "sdk",
+    "worldwind",
+    "3d",
+    "globe",
+    "earth",
+    "terrain",
+    "imagery",
+    "nasa",
+    "esa",
+    "geospatial",
+    "html5",
+    "javascript",
+    "webgl",
+    "browser",
+    "lt2",
+    "cpm"
+  ],
+  "license": "Apache-2.0",
+  "main": "build/dist/worldwind.js",
+  "name": "@nasaworldwind/worldwind",
+  "orig_author": "NASA",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NASAWorldWind/WebWorldWind.git"
+  },
+  "scripts": {
+    "build": "grunt",
+    "clean": "grunt clean",
+    "doc": "grunt jsdoc",
+    "test": "grunt karma",
+    "test:watch": "karma start karma.conf.js"
+  },
+  "version": "0.9.0-lt2-v9"
+}
