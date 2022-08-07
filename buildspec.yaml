@@ -20,6 +20,9 @@ phases:
     commands:
       - echo Build started on `date`
       - ng build --configuration=production --output-path dist
+      - cd dist
+      - docker build -t coord-grabber .
+      - docker images
   post_build:
     commands:
       - echo Build completed on `date`
