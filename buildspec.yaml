@@ -27,8 +27,10 @@ phases:
       - echo Build started on `date`
       - ng build --configuration=production --output-path dist
       - cd dist
-      - docker build -t coord-grabber .
-      - docker images
+      - docker build -t coordgrabber .
+      - docker tag coordgrabber coordgrabber:latest
+      - docker push cdbarrineau/coordgrabber:latest
+
   post_build:
     commands:
       - echo Build completed on `date`
