@@ -1,0 +1,30 @@
+version: 0.2
+
+env:
+  variables:
+    CACHE_CONTROL: "86400"
+    BUILD_ENV: "prod"
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      - npm install -g @angular/cli
+      - ng add @angular/material
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - ng build --${BUILD_ENV} --output-path dist
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist*'
+  discard-paths: yes
