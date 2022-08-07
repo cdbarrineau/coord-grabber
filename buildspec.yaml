@@ -4,6 +4,9 @@ env:
   variables:
     CACHE_CONTROL: "86400"
     BUILD_ENV: "prod"
+  secrets-manager:
+    DOCKERHUB_PASS: "/dockerhub/credentials:password"
+    DOCKERHUB_USERNAME: "/dockerhub/credentials:username"
 phases:
   install:
     runtime-versions:
@@ -13,6 +16,7 @@ phases:
       - npm install
       - npm install -g @angular/cli
       - ng add @angular/material
+      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
