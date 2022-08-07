@@ -29,7 +29,7 @@ phases:
       - cd dist
       - docker build -t coordgrabber .
       - docker tag coordgrabber coordgrabber:latest
-      - docker push cdbarrineau/coordgrabber:latest
+      - docker push $DOCKERHUB_USERNAME/coordgrabber:latest
 
   post_build:
     commands:
