@@ -5,8 +5,8 @@ env:
     CACHE_CONTROL: "86400"
     BUILD_ENV: "prod"
   secrets-manager:
-    DOCKERHUB_PASS: "/dockerhub/credentials:password"
-    DOCKERHUB_USERNAME: "/dockerhub/credentials:username"
+    DOCKERHUB_PASS: "/dockerhub/credentials-password"
+    DOCKERHUB_USERNAME: "/dockerhub/credentials-username"
 phases:
   install:
     runtime-versions:
