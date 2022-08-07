@@ -16,6 +16,8 @@ phases:
       - npm install
       - npm install -g @angular/cli
       - ng add @angular/material
+      - echo $DOCKERHUB_USERNAME
+      - echo $DOCKERHUB_PASS
       - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
   pre_build:
     commands:
