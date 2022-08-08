@@ -12,13 +12,15 @@ phases:
     runtime-versions:
       nodejs: 16
     commands:
+      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
+      - docker push $DOCKERHUB_USERNAME/coordgrabber:latest
       - echo Installing source NPM dependencies...
       - npm install
       - npm install -g @angular/cli
       - ng add @angular/material
       - echo $DOCKERHUB_USERNAME
       - echo $DOCKERHUB_PASS
-      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
+      - 
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
@@ -29,7 +31,6 @@ phases:
       - cd dist
       - docker build -t coordgrabber .
       - docker tag coordgrabber coordgrabber:latest
-      - docker push $DOCKERHUB_USERNAME/coordgrabber:latest
 
   post_build:
     commands:
