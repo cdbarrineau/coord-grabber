@@ -27,8 +27,8 @@ phases:
       - ng build --configuration=production --output-path dist
       - cd dist
       - docker build -t coordgrabber .
-      - docker tag coordgrabber coordgrabber
-      - docker push coordgrabber:latest
+      - docker tag coordgrabber cdbarrineau/coordgrabber
+      - docker push cdbarrineau/coordgrabber:latest
       - printf '[{"name":"CoordGrabberContainer","imageUri":"cdbarrineau/coordgrabber:latest"}]' > imagedefinitions.json
       - cat imagedefinitions.json
 
