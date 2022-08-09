@@ -31,7 +31,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/nasaworldwind/worldwind/build/dist/worldwind.min.js"
+            ]
           },
           "configurations": {
             "production": {
