@@ -1,6 +1,6 @@
 [
     {
       "name": "CoordGrabber",
-      "imageUri": "https://dockerhub.io/cdbarrineau/coordgrabber:latest"
+      "imageUri": "cdbarrineau/coordgrabber:latest"
     }
   ]
