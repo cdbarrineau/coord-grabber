@@ -30,7 +30,6 @@ phases:
       - docker tag coordgrabber cdbarrineau/coordgrabber
       - docker push cdbarrineau/coordgrabber:latest
       - printf '[{"name":"CoordGrabberContainer","imageUri":"cdbarrineau/coordgrabber:latest"}]' > imagedefinitions.json
-      - cat imagedefinitions.json
 
   post_build:
     commands:
