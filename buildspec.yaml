@@ -27,7 +27,7 @@ phases:
       - cd dist
       - docker build -t coordgrabber .
       - docker tag coordgrabber cdbarrineau/coordgrabber
-      - docker push cdbarrineau/coo drdgrabber:latest
+      - docker push cdbarrineau/coordgrabber:latest
       - printf '[{"name":"coordgrabber","imageUri":"cdbarrineau/coordgrabber:latest"}]' > imagedefinitions.json
       - cat imagedefinitions.json
 
