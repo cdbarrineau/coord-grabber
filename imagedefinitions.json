@@ -1,6 +1,6 @@
 [
     {
-      "name": "CoordGrabberContainer",
+      "name": "CoordGrabberProdContainer",
       "imageUri": "cdbarrineau/coordgrabber:latest"
     }
   ]
