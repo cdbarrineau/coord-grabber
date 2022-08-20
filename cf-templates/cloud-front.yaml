@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  CoordGrabberDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+        - DomainName: !ImportValue production:ExternalUrl
+          Id: AlbUrl
+        Enabled: 'true'
+        DefaultRootObject: index.html
+        Logging:
+          IncludeCookies: 'false'
+          Bucket: coord-grabber.logging.s3.amazonaws.com
+          Prefix: logs
+        Aliases:
+        - coordgrabber.com
+        - '*.coordgrabber.com'
+        DefaultCacheBehavior:
+          AllowedMethods:
+          - GET
+          TargetOriginId: !ImportValue production:ExternalUrl
+          ForwardedValues:
+            QueryString: 'false'
+            Cookies:
+              Forward: none
+#          TrustedSigners:
+#          - 1234567890EX
+#          - 1234567891EX
+          ViewerProtocolPolicy: redirect-to-https
+        PriceClass: PriceClass_200
+        ViewerCertificate:
+          AcmCertificateArn: arn:aws:acm:us-east-1:057147015553:certificate/c13a0f69-7f42-484b-af0d-4cf35d936543
+          MinimumProtocolVersion: TLSv1.2_2021
+          SslSupportMethod: sni-only
