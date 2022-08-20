@@ -172,7 +172,7 @@ Resources:
       SubnetId: !Ref PrivateSubnetTwo
 
   # ECS Resources
-  ECSCluster:
+  CoordGrabberCluster:
     Type: AWS::ECS::Cluster
 
   # A security group for the containers we will run in Fargate.
@@ -282,7 +282,7 @@ Resources:
 Outputs:
   ClusterName:
     Description: The name of the ECS cluster
-    Value: !Ref 'ECSCluster'
+    Value: !Ref 'CoordGrabberCluster'
     Export:
       Name: !Sub ${EnvironmentName}:ClusterName
   AutoscalingRole:
