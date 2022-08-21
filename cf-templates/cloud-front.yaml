@@ -5,8 +5,12 @@ Resources:
     Properties:
       DistributionConfig:
         Origins:
-        - DomainName: !ImportValue production:ExternalUrl
-          Id: AlbUrl
+        - DomainName: Fn::ImportValue: production:ExternalUrl
+          Id: CoordGrabberAlbUrl
+          CustomOriginConfig:
+            HTTPPort: '80'
+            HTTPSPort: '443'
+            OriginProtocolPolicy: https-only
         Enabled: 'true'
         DefaultRootObject: index.html
         Logging:
@@ -14,12 +18,15 @@ Resources:
           Bucket: coord-grabber.logging.s3.amazonaws.com
           Prefix: logs
         Aliases:
-        - coordgrabber.com
-        - '*.coordgrabber.com'
+        - cdbsandbox.com
+        - '*.cdbsandbox.com'
+#        - coordgrabber.com
+#        - '*.coordgrabber.com'
         DefaultCacheBehavior:
           AllowedMethods:
           - GET
-          TargetOriginId: !ImportValue production:ExternalUrl
+          - HEAD
+          TargetOriginId: CoordGrabberAlbUrl
           ForwardedValues:
             QueryString: 'false'
             Cookies:
@@ -30,6 +37,6 @@ Resources:
           ViewerProtocolPolicy: redirect-to-https
         PriceClass: PriceClass_200
         ViewerCertificate:
-          AcmCertificateArn: arn:aws:acm:us-east-1:057147015553:certificate/c13a0f69-7f42-484b-af0d-4cf35d936543
+          AcmCertificateArn: arn:aws:acm:us-east-1:057147015553:certificate/d8344d6c-3e18-49e3-b12d-e55d87c59c17
           MinimumProtocolVersion: TLSv1.2_2021
           SslSupportMethod: sni-only

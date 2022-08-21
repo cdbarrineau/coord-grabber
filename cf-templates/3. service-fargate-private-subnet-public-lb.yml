@@ -7,7 +7,7 @@ Parameters:
     Description: The name of the environment to add this service to
   ServiceName:
     Type: String
-    Default: CoordGrabberService
+    Default: CoordGrabberService-testing
     Description: A name for the service
   ImageUrl:
     Type: String
@@ -167,7 +167,7 @@ Resources:
           - - service
             - Fn::ImportValue: !Sub ${EnvironmentName}:ClusterName
             - !Ref 'ServiceName'
-      MinCapacity: 2
+      MinCapacity: 1
       MaxCapacity: 10
       RoleARN:
         Fn::ImportValue: !Sub ${EnvironmentName}:AutoscalingRole
